@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-// 5 状态组件
-import App from './lessons/3_state'
+// 1 标题
+const name = 'JAXK'
+const title = <h1 className="title">Hello JSX, {name}</h1>
 
+// 2 列表渲染
+const songs = [
+    {id:1, name:'song1'},
+    {id:2, name:'song2'}
+]
+const list = (
+    <ul style={{color:'red'}} className="title">
+        {songs.map(item => <li key={item.id}>{item.name}</li>)}
+    </ul>
+)
 // 渲染内容
 let html = (
     <div>
-        hello!
-        <App></App>
+        <h1>渲染</h1>
+        <h2>标题</h2>
+        {title}
+        <h2>列表渲染</h2>
+        {list}
     </div>
 )
 
